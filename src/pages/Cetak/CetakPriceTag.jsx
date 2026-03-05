@@ -40,7 +40,7 @@ const CetakPriceTag = () => {
     <div style={styles.pageContainer}>
       {/* PANEL KONTROL */}
       <div className="no-print" style={styles.controlPanel}>
-        <h2 style={{ margin: '0 0 10px 0', color: '#2c3e50' }}>🛒 Supermarket Price Pro</h2>
+        <h2 style={{ margin: '0 0 10px 0', color: '#2c3e50' }}>SCAN BARCODE</h2>
         <form onSubmit={handleScannerSubmit}>
           <input 
             ref={inputRef}
