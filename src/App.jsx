@@ -28,7 +28,7 @@ const App = () => {
       overflowX: isMobile ? 'auto' : 'hidden'
     }}>
       <div style={styles.logoArea}>
-        <h2 style={styles.logoText}>🏷️ PriceTag</h2>
+        <h2 style={styles.logoText}>UD AMANAH</h2>
       </div>
       
       <nav style={{ 
