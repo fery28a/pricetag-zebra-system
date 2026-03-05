@@ -15,7 +15,7 @@ const CetakPriceTag = () => {
 
   const fetchData = async () => {
     try {
-      const res = await axios.get('http://localhost:5000/api/products');
+      const res = await axios.get('http://10.10.10.100:3000/api/products');
       setItems(res.data);
     } catch (err) { console.error("Gagal mengambil data:", err); }
   };
