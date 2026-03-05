@@ -8,21 +8,21 @@ const DataSatuan = () => {
   useEffect(() => { fetchList(); }, []);
 
   const fetchList = async () => {
-    const res = await axios.get('http://localhost:5000/api/satuan');
+    const res = await axios.get('http://10.10.10.100:3000/api/satuan');
     setList(res.data);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!input) return;
-    await axios.post('http://localhost:5000/api/satuan', { nama: input });
+    await axios.post('http://10.10.10.100:3000/api/satuan', { nama: input });
     setInput("");
     fetchList();
   };
 
   const handleDelete = async (id) => {
     if (window.confirm("Hapus satuan ini?")) {
-      await axios.delete(`http://localhost:5000/api/satuan/${id}`);
+      await axios.delete(`http://10.10.10.100:3000/api/satuan/${id}`);
       fetchList();
     }
   };
