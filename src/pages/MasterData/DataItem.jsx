@@ -31,8 +31,8 @@ const DataItem = () => {
   };
 
   const fetchDropdowns = async () => {
-    const resJenis = await axios.get('http://localhost:5000/api/jenis');
-    const resSatuan = await axios.get('http://localhost:5000/api/satuan');
+    const resJenis = await axios.get('http://10.10.10.100:3000/api/jenis');
+    const resSatuan = await axios.get('http://10.10.10.100:3000/api/satuan');
     setListJenis(resJenis.data);
     setListSatuan(resSatuan.data);
   };
@@ -41,9 +41,9 @@ const DataItem = () => {
     e.preventDefault();
     try {
       if (isEdit) {
-        await axios.put(`http://localhost:5000/api/products/${currentId}`, formData);
+        await axios.put(`http://10.10.10.100:3000/api/products/${currentId}`, formData);
       } else {
-        await axios.post('http://localhost:5000/api/products', formData);
+        await axios.post('http://10.10.10.100:3000/api/products', formData);
       }
       setShowModal(false);
       fetchData();
@@ -103,7 +103,7 @@ const DataItem = () => {
                 <td style={styles.td}>Rp {item.hargaPcs.toLocaleString()}</td>
                 <td style={styles.td}>
                   <button onClick={() => handleEdit(item)} style={styles.btnEdit}>✏️</button>
-                  <button onClick={async () => { if(window.confirm("Hapus?")) { await axios.delete(`http://localhost:5000/api/products/${item._id}`); fetchData(); }}} style={styles.btnHapus}>🗑️</button>
+                  <button onClick={async () => { if(window.confirm("Hapus?")) { await axios.delete(`10.10.10.100:3000/api/products/${item._id}`); fetchData(); }}} style={styles.btnHapus}>🗑️</button>
                 </td>
               </tr>
             ))}
