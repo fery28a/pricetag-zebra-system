@@ -8,21 +8,21 @@ const DataJenis = () => {
   useEffect(() => { fetchList(); }, []);
 
   const fetchList = async () => {
-    const res = await axios.get('http://localhost:5000/api/jenis');
+    const res = await axios.get('http://10.10.10.100:3000/api/jenis');
     setList(res.data);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!input) return;
-    await axios.post('http://localhost:5000/api/jenis', { nama: input });
+    await axios.post('http://10.10.10.100:3000/api/jenis', { nama: input });
     setInput("");
     fetchList();
   };
 
   const handleDelete = async (id) => {
     if (window.confirm("Hapus jenis ini?")) {
-      await axios.delete(`http://localhost:5000/api/jenis/${id}`);
+      await axios.delete(`http://10.10.10.100:3000/api/jenis/${id}`);
       fetchList();
     }
   };
